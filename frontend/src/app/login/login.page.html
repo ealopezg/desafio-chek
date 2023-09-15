@@ -1,0 +1,17 @@
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" style="color: #53357d;">INGRESA TU CELULAR</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <h2>INGRESA TU CELULAR</h2>
+  <p>Te enviaremos un código de verificación para comenzar el registro.</p>
+  <ion-input label="+56" [maxlength]="9" fill="solid" style="margin-bottom: 20px;" [(value)]="phone"></ion-input>
+  <ion-checkbox labelPlacement="end">Estoy de acuerdo con los <a href="">Términos y Condiciones</a></ion-checkbox>
+  <div class="buttons">
+    <ion-button expand="block" [class.button-disabled]="true" >CONTINUAR</ion-button>
+    <ion-button expand="block">VOLVER</ion-button>
+  </div>
+
+</ion-content>
