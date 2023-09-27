@@ -1,0 +1,30 @@
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <div class="" *ngIf="step == 0">
+    <h1 style="color: #53357d;">INGRESA TU CELULAR</h1>
+    <p>Te enviaremos un código de verificación para comenzar el registro.</p>
+    <ion-input label="+56" [maxlength]="9" fill="solid" style="margin-bottom: 20px; " [(ngModel)]="phone"></ion-input>
+    <ion-checkbox labelPlacement="end" [(ngModel)]="acceptTerms"><span style="font-size: 0.8rem;">Estoy de acuerdo con los
+        <a href="">Términos y Condiciones</a>
+      </span></ion-checkbox>
+    <div class="buttons">
+      <ion-button expand="block" [class.button-disabled]="phone.length != 9 || !acceptTerms"
+        (click)="sendNumber()">CONTINUAR</ion-button>
+      <ion-button expand="block"  [routerLink]="['/start']">VOLVER</ion-button>
+    </div>
+  </div>
+
+  <div class="" *ngIf="step == 1">
+    <h1 style="color: #53357d;">INGRESA EL CÓDIGO SMS</h1>
+    <p>Te enviamos un código de verificación a este número <a>+56 {{ phone}}</a>.</p>
+    <div class="code"> 
+      <ng-otp-input [formCtrl]="otpCode" [config]="{length:6,inputStyles: {'background': 'white',height: '50px',width: '50px'} }"></ng-otp-input>
+    </div>
+    <div class="buttons">
+      <ion-button expand="block" [class.button-disabled]="otpCode.value?.length != 6" (click)="verifyOTP()"
+        >CONTINUAR</ion-button>
+      <ion-button expand="block" (click)="step = 0">VOLVER</ion-button>
+    </div>
+  </div>
+</ion-content>

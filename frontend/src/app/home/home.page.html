@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true">
+  <div class="">
+    <div class="home-header">
+      <div class="home-profile-info">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <div class="container">
+          <p class="user-name">Hola {{user.firstName.toUpperCase()}} {{user.lastName.toUpperCase()}}</p>
+          <p class="user-profile">Mi perfil</p>
+        </div>
+      </div>
+      <div class="home-account-info" *ngIf="user.accounts.length > 0">
+        <span class="account-number">N° de cuenta <span style="font-weight: bold;">{{user.accounts[0].number}}</span></span>
+        <span style="font-weight: bold;">TU SALDO CHEK</span>
+        <div class="account-balance">
+          <span>{{showBalance ? user.accounts[0].balance.toLocaleString('es-CL', { style: "currency", currency: "CLP" }) : '$.-'}}</span>
+          <ion-icon name="eye-outline" class="icon" *ngIf="showBalance" (click)="showBalance = !showBalance"></ion-icon>
+          <ion-icon name="eye-off-outline" class="icon" *ngIf="!showBalance" (click)="showBalance = !showBalance"></ion-icon>
+        </div>
+        <a href="">Movimientos</a>
+      </div>
+      <p style="margin-top: 15px;">¿Qué quieres hacer?</p>
+    </div>
+    <div class="options">
+      <div class="option-button">
+        <ion-icon name="cash-outline"></ion-icon>
+        Cargar
+      </div>
+      <div class="option-button">
+        <ion-icon name="wallet-outline"></ion-icon>
+        Retirar
+      </div>
+      <div class="option-button">
+        <ion-icon name="wallet-outline"></ion-icon>
+        Pago con QR
+      </div>
+      <div class="option-button">
+        <ion-icon name="wallet-outline"></ion-icon>
+        Servicios
+      </div>
+      <div class="option-button">
+        <ion-icon name="wallet-outline"></ion-icon>
+        Transferencias
+      </div>
+    </div>
+  </div>  
+</ion-content>

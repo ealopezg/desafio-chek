@@ -1,0 +1,13 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <h1 style="color: #53357d;">INGRESA TU CELULAR</h1>
+  <ion-input label="+56" [maxlength]="9" fill="solid" style="margin-bottom: 20px;" [(ngModel)]="phone"></ion-input>
+  <ion-input label="Nombre" fill="solid" style="margin-bottom: 20px;" [(ngModel)]="name"></ion-input>
+  <ion-input label="Apellidos"  fill="solid" style="margin-bottom: 20px;" [(ngModel)]="lastName"></ion-input>
+  <div class="buttons">
+    <ion-button expand="block" [class.button-disabled]="phone.length != 9 || name.length == 0 || lastName.length == 0"
+      (click)="register()">REGISTRARSE</ion-button>
+    <ion-button expand="block" [routerLink]="['/start']">VOLVER</ion-button>
+  </div>
+</ion-content>
+

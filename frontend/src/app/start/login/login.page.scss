@@ -1,0 +1,29 @@
+.buttons{
+    position: fixed;
+    padding: 20px;
+    left: 0;
+    bottom: 40px;
+    right: 0;
+}
+
+ion-input.custom {
+    --placeholder-opacity: 0.8;
+    --padding-bottom: 10px;
+    --padding-end: 10px;
+    --padding-start: 10px;
+    --padding-top: 10px;
+    --border-width: 2px;
+}
+
+ion-input.custom .helper-text,
+ion-input.custom .counter {
+    color: var(--ion-color-step-700, #373737);
+}
+
+.code{
+    display: flex;
+    justify-content: center;
+    
+}
+
+
