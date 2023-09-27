@@ -4,6 +4,8 @@ services:
       context: ./frontend
       dockerfile: ./Dockerfile.prod
     working_dir: /home/node/app
+    ports:
+      - 80:80
     env_file:
       - .env
     volumes:
