@@ -1,7 +1,10 @@
-FROM node:lts
+FROM node:lts as build-stage
 WORKDIR /app
 RUN npm install -g @ionic/cli
-ENV API_URL http://35.232.171.18:3000
+COPY package*.json ./
+RUN npm install
+COPY ./ .
+ENV API_URL http://35.232.171.18:8000
 ENV PRODUCTION true
 RUN npm run config-ts
 RUN ionic build --engine=browser
