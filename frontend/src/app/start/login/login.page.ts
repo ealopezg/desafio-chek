@@ -14,10 +14,11 @@ export class LoginPage implements OnInit {
 
   constructor(private authService: AuthService) { }
 
+  step: number = 0;
   ngOnInit() {
-    
+    this.step = 0;
   }
-  step: number = 1;
+ 
   @Input() phone: string = "";
   @Input() acceptTerms: boolean = false;
   otpCode = new FormControl('');
