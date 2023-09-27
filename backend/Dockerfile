@@ -17,4 +17,4 @@ RUN npm run build
 EXPOSE 3000 
 RUN ls
 # Start the server using the production build
-ENTRYPOINT [ "node", "dist/main.js" ]
+ENTRYPOINT [ "node", "/app/dist/main.js" ]
